@@ -5,3 +5,8 @@ Vagrantfile with baseline Quagga configuration
 
 Postman collection for retrieving BGP and RIB data, managing IPv4 routes
 	- Update the Opendaylight IP address in the URI according to your setup
+
+A sample BGP XML configuration file
+	- 192.168.1.102 is Opendaylight IP
+	- 192.168.1.242 is Quagga router IP
+	- 64496 is the AS number
