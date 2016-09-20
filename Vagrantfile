@@ -20,10 +20,17 @@ $quagga = <<SCRIPT
 
   cat > /etc/quagga/bgpd.conf << EOF
 hostname peer-1
+log file /var/log/quagga/bgpd.log
+log timestamp precision 6
+!
 password admin
 enable password admin
-log timestamp precision 6
-log file /var/log/quagga/bgpd.log
+!
+router bgp 64496
+ bgp router-id 192.168.1.242
+ network 192.0.2.0/24
+ neighbor 192.168.1.102 remote-as 64496
+ neighbor 192.168.1.102 route-reflector-client
 !
 line vty
  exec-timeout 0 0
